@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 sp1 (http://www.altova.com) by ﻿champix (champix) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:include schemaLocation="testInclusion.xsd"/>
 	<xs:include schemaLocation="ident.xsd"/>
+	<xs:attribute name="id" type="xs:ID"/>
 	<xs:element name="cv">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ident"/>
 				<xs:element name="formations"/>
 			</xs:sequence>
-			<xs:attribute name="id" type="xs:string"/>
+			<xs:attribute name="id" type="xs:string" use="required"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="cvs">
@@ -21,7 +23,13 @@
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="civilite" maxOccurs="unbounded">
-								<!--a faire plus tard car complexeType mais contenu simple-->
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute ref="id"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
 					</xs:complexType>

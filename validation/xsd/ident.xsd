@@ -33,7 +33,7 @@
 	<xs:element name="nom" type="xs:string"/>
 	<xs:element name="pnom" type="xs:string"/>
 	<xs:element name="mail" type="xs:string"/>
-	<xs:element name="tel" type="xs:string"/>
+	<xs:element name="tel" type="ST_telNumber"/>
 	<xs:element name="permis" type="CT_permis"/>
 	<xs:element name="datenaiss" type="xs:date"/>
 	<xs:element name="age" type="xs:integer"/>

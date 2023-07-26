@@ -28,7 +28,48 @@
 				</xs:element>
 				<xs:element ref="cv" maxOccurs="unbounded"/>
 			</xs:sequence>
-			<!--<xs:attribute></xs:attribute>-->
+		</xs:complexType>
+	</xs:element>
+	<xs:attribute name="obtenu" type="xs:boolean"/>
+	<xs:attribute name="note" type="xs:decimal"/>
+	<xs:element name="diplomes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="diplome" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="intitule" type="xs:string"/>
+							<xs:element name="option" type="xs:string" minOccurs="0"/>
+						</xs:sequence>
+						<xs:attribute ref="note"/>
+						<xs:attribute ref="obtenu" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="competences">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="competence" type="xs:string" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="formations">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="formation" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="intitule" type="xs:string"/>
+							<xs:choice>
+								<xs:element ref="competences"/>
+								<xs:element ref="diplomes"/>
+							</xs:choice>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>

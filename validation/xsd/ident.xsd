@@ -30,7 +30,7 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:attribute name="idciv" type="xs:string"/>
+	<xs:attribute name="idciv" type="xs:IDREFS"/>
 	<xs:element name="nom" type="xs:string"/>
 	<xs:element name="pnom" type="xs:string"/>
 	<xs:element name="mail" type="ST_mail"/>

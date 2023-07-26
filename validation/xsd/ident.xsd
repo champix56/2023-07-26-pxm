@@ -40,8 +40,10 @@
 		<xs:sequence>
 			<xs:element ref="nom"/>
 			<xs:element ref="pnom" maxOccurs="4"/>
-			<xs:element ref="mail"/>
-			<xs:element ref="tel"/>
+			<xs:choice>
+				<xs:element ref="mail"/>
+				<xs:element ref="tel"/>
+			</xs:choice>
 			<xs:element ref="permis"/>
 			<xs:element ref="datenaiss"/>
 			<xs:element ref="age"/>

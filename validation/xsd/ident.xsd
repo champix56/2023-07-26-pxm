@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 sp1 (http://www.altova.com) by ﻿champix (champix) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:include schemaLocation="genericSimpleTypes.xsd"/>
 	<xs:element name="adresse" type="xs:string"/>
@@ -12,13 +13,13 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:attributeGroup name="AG_detailsLangues">
-		<xs:attribute name="lu" type="xs:boolean"/>
-		<xs:attribute name="ecris" type="xs:boolean"/>
-		<xs:attribute name="parle" type="xs:boolean"/>
+		<xs:attribute name="lu" type="xs:boolean" use="required"/>
+		<xs:attribute name="ecris" type="xs:boolean" use="required"/>
+		<xs:attribute name="parle" type="xs:boolean" use="required"/>
 	</xs:attributeGroup>
 	<xs:complexType name="CT_Langue">
-		<xs:attribute ref="langName"/>
-		<xs:attribute name="matern" type="xs:boolean"/>
+		<xs:attribute ref="langName" use="required"/>
+		<xs:attribute name="matern" type="xs:boolean" use="required"/>
 		<xs:attributeGroup ref="AG_detailsLangues"/>
 	</xs:complexType>
 	<xs:element name="langue" type="CT_Langue"/>

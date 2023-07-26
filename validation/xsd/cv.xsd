@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:include schemaLocation="ident.xsd"/>
 	<xs:element name="cv">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="ident"/>
+				<xs:element ref="ident"/>
 				<xs:element name="formations"/>
 			</xs:sequence>
 			<xs:attribute name="id" type="xs:string"/>

@@ -24,5 +24,29 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	
+	<xs:attribute name="idciv" type="xs:string"/>
+	<xs:element name="nom" type="xs:string"/>
+	<xs:element name="pnom" type="xs:string"/>
+	<xs:element name="mail" type="xs:string"/>
+	<xs:element name="tel" type="xs:string"/>
+	<xs:element name="permis" type="CT_permis"/>
+	<xs:element name="datenaiss" type="xs:date"/>
+	<xs:element name="age" type="xs:integer"/>
+	<xs:complexType name="CT_permis">
+		<xs:attribute name="value" ></xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="CT_ident">
+		<xs:sequence>
+			<xs:element ref="nom"/>
+			<xs:element ref="pnom" maxOccurs="4"/>
+			<xs:element ref="mail" />
+			<xs:element ref="tel" />
+			<xs:element ref="permis" />
+			<xs:element ref="datenaiss" />
+			<xs:element ref="age" />
+			<xs:element ref="langues" />
+		</xs:sequence>
+		<xs:attribute ref="idciv"/>
+	</xs:complexType>
+	<xs:element name="ident" type="CT_ident"/>
 </xs:schema>

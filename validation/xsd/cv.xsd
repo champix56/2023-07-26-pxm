@@ -9,15 +9,14 @@
 			<xs:enumeration value="al"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:element name="langue">
-		<xs:complexType>
+	<xs:complexType name="CT_LangName">
 			<xs:attribute ref="langName"/>
 			<xs:attribute name="matern" type="xs:boolean"/>
 			<xs:attribute name="lu" type="xs:boolean"/>
 			<xs:attribute name="ecris" type="xs:boolean"/>
 			<xs:attribute name="parle" type="xs:boolean"/>
 		</xs:complexType>
-	</xs:element>
+	<xs:element name="langue" type="CT_LangName"/>
 	<xs:element name="cv">
 		<xs:complexType>
 			<xs:sequence>

@@ -2,7 +2,16 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 <xs:element name="langue">
 	<xs:complexType>
-		<xs:attribute name="langName" type="xs:string"/>
+		<xs:attribute name="langName" >
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="en"/>
+					<xs:enumeration value="es"/>
+					<xs:enumeration value="fr"/>
+					<xs:enumeration value="al"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
 		<xs:attribute name="matern" type="xs:boolean"/>
 		<xs:attribute name="lu" type="xs:boolean"/>
 		<xs:attribute name="ecris" type="xs:boolean"/>

@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
-<xs:simpleType name="ST_mail">
-	<xs:restriction base="xs:string">
-		<xs:pattern value="(\w+([.-]\w*)?)+@\w+([.-]\w*)?\.[a-z]{2,}"/>
-	</xs:restriction>
-</xs:simpleType>
-<xs:simpleType name="ST_permisValue">
-	<xs:restriction base="xs:string">
-		<xs:pattern value="A?B?C?"/>
-	</xs:restriction>
-</xs:simpleType>
-	<xs:simpleType name="ST_telNumber">
-		<xs:restriction base="xs:string">
-			<xs:pattern value="0[1-7](((-\d{2}){4})|((\.\d{2}){4})|(( \d{2}){4}))"/>
-		</xs:restriction>
-	</xs:simpleType>
+
 	<xs:attribute name="langName" type="ST_langName"/>
 	<xs:simpleType name="ST_langName">
 		<xs:restriction base="xs:string">

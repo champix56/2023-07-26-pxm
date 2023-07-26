@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
-
+	<xs:element name="cvs">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="civilites">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="civilite">
+								<!--a faire plus tard car complexeType mais contenu simple-->
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<!--<xs:attribute></xs:attribute>-->
+		</xs:complexType>
+	</xs:element>
 </xs:schema>

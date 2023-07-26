@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:attribute name="langName" type="ST_langName"/>
+	<xs:simpleType name="ST_langName">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="en"/>
+			<xs:enumeration value="es"/>
+			<xs:enumeration value="fr"/>
+			<xs:enumeration value="al"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CT_Langue">
+		<xs:attribute ref="langName"/>
+		<xs:attribute name="matern" type="xs:boolean"/>
+		<xs:attribute name="lu" type="xs:boolean"/>
+		<xs:attribute name="ecris" type="xs:boolean"/>
+		<xs:attribute name="parle" type="xs:boolean"/>
+	</xs:complexType>
+	<xs:element name="langue" type="CT_Langue"/>
+	<xs:element name="langues">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="langue" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+</xs:schema>

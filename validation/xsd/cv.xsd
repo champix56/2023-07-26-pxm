@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:element name="langue">
+	<xs:complexType>
+		<xs:attribute name="langName" type="xs:string"/>
+		<xs:attribute name="matern" type="xs:boolean"/>
+		<xs:attribute name="lu" type="xs:boolean"/>
+		<xs:attribute name="ecris" type="xs:boolean"/>
+		<xs:attribute name="parle" type="xs:boolean"/>
+	</xs:complexType>
+</xs:element>
 	<xs:element name="cv">
 		<xs:complexType>
 			<xs:sequence>

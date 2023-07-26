@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:include schemaLocation="genericSimpleTypes.xsd"/>
+	<xs:element name="adresse" type="xs:string"/>
 	<xs:attribute name="langName" type="ST_langName"/>
 	<xs:simpleType name="ST_langName">
 		<xs:restriction base="xs:string">
@@ -41,8 +42,11 @@
 			<xs:element ref="nom"/>
 			<xs:element ref="pnom" maxOccurs="4"/>
 			<xs:choice>
-				<xs:element ref="mail"/>
-				<xs:element ref="tel"/>
+				<xs:sequence>
+					<xs:element ref="mail"/>
+					<xs:element ref="tel"/>
+				</xs:sequence>
+				<xs:element ref="adresse"/>
 			</xs:choice>
 			<xs:element ref="permis"/>
 			<xs:element ref="datenaiss"/>

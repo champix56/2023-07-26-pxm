@@ -1,0 +1,18 @@
+<!ENTITY euro "&#8364;">
+<!ENTITY % dtdIdent SYSTEM "ident.dtd">
+%dtdIdent;
+<!ELEMENT cvs (cv*)>
+<!ELEMENT cv (ident,formations)>
+<!ATTLIST cv
+	id ID #REQUIRED
+>
+<!ELEMENT formations (formation*)>
+<!ELEMENT formation (intitule,diplomes)>
+<!ELEMENT intitule (#PCDATA)>
+<!ELEMENT diplomes (diplome*)>
+<!ELEMENT diplome (intitule,option?)>
+<!ATTLIST diplome
+	note CDATA #REQUIRED
+	obtenu (true|false) #REQUIRED
+>
+<!ELEMENT option (#PCDATA)>

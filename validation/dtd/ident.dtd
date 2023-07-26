@@ -1,0 +1,20 @@
+<!ELEMENT ident (nom,pnom,pnom?,pnom?,pnom?,((mail,tel)|adresse),permis,datenaiss,age,langues)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT pnom (#PCDATA)>
+<!ELEMENT mail (#PCDATA)>
+<!ELEMENT tel (#PCDATA)>
+<!ELEMENT permis EMPTY>
+<!ATTLIST permis
+	value (A|B|C|AB|AC|ABC|BC) #REQUIRED
+>
+<!ELEMENT datenaiss (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT langues (langue+)>
+<!ELEMENT langue EMPTY>
+<!ATTLIST langue
+	langName (fr|en|es|al) #REQUIRED
+	matern (true|false) #REQUIRED
+	lu  (true|false) #REQUIRED
+	ecris (true|false) #REQUIRED
+	parle (true|false) #REQUIRED
+>

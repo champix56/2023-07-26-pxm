@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvs>
+	<cv id="123">
+		<ident>
+			<nom>DESORBAIX</nom>
+			<pnom>Alexandre</pnom>
+			<pnom>Dominique</pnom>
+			<pnom>Joël</pnom>
+			<mail>desorbaix@free.fr</mail>
+			<tel>06.64.27.63.60</tel>
+			<permis>AB</permis>
+			<langues>
+				<langue langName="fr" matern="true"/>
+				<langue langName="en" lu="true" ecris="true" parle="true"/>
+				<langue langName="al" lu="true" ecris="false" parle="false"/>
+			</langues>
+		</ident>
+		<formations>
+			<formation>
+				<intitule>Fac de versailles</intitule>
+				<diplomes>
+					<diplome note="14" obtenu="true">
+						<intitule>DAEU</intitule>
+						<option>B</option>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<intitule>Ecole privé Evry</intitule>
+				<diplomes>
+					<diplome note="18.5" obtenu="true">
+						<intitule>BEP Informatique de gestion</intitule>
+						<option>dev</option>
+					</diplome>
+					<diplome note="18.5" obtenu="true">
+						<intitule>Licence Pro Assistant chef de projet</intitule>
+						<option>dev</option>
+					</diplome>
+					<diplome note="15.5" obtenu="false">
+						<intitule>Master chef de projet</intitule>
+						<option>dev</option>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+	</cv>
+	<cv id="123">
+		<ident>
+			<nom>DESORBAIX</nom>
+			<pnom>Alexandre</pnom>
+			<pnom>Dominique</pnom>
+			<pnom>Joël</pnom>
+			<mail>desorbaix@free.fr</mail>
+			<tel>06.64.27.63.60</tel>
+			<permis>AB</permis>
+			<langues>
+				<langue langName="fr" matern="true"/>
+				<langue langName="en" lu="true" ecris="true" parle="true"/>
+				<langue langName="al" lu="true" ecris="false" parle="false"/>
+			</langues>
+		</ident>
+		<formations>
+			<formation>
+				<intitule>Fac de versailles</intitule>
+				<diplomes>
+					<diplome note="14" obtenu="true">
+						<intitule>DAEU</intitule>
+						<option>B</option>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<intitule>Ecole privé Evry</intitule>
+				<diplomes>
+					<diplome note="18.5" obtenu="true">
+						<intitule>BEP Informatique de gestion</intitule>
+						<option>dev</option>
+					</diplome>
+					<diplome note="18.5" obtenu="true">
+						<intitule>Licence Pro Assistant chef de projet</intitule>
+						<option>dev</option>
+					</diplome>
+					<diplome note="15.5" obtenu="false">
+						<intitule>Master chef de projet</intitule>
+						<option>dev</option>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+	</cv>
+</cvs>

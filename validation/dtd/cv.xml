@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cvs SYSTEM "cvgen.dtd">
+<cvs>
+<civilites>
+	<civilite id="M">Monsieur</civilite>
+	<civilite id="Mme">Madame</civilite>
+	<civilite id="Mlle">Mademoiselle</civilite>
+	<civilite id="Me">Maitre</civilite>
+	<civilite id="Dr">Docteur</civilite>
+	<civilite id="Pr">Professeur</civilite>
+</civilites>
+	<cv id="C123">
+		<ident idciv="M Dr">
+			<nom>DESORBAIX</nom>
+			<pnom>Alexandre</pnom>
+			<mail>desorbaix@free.fr</mail>
+			<tel>06.64.27.63.60</tel>
+			<permis value="AB"/>
+			<datenaiss>1984-08-03</datenaiss>
+			<age>39</age>
+			<langues>
+				<langue langName="fr" matern="true" lu="true" ecris="true" parle="true"/>
+				<langue langName="en" lu="true" ecris="true" parle="true" matern="true"/>
+				<langue langName="al" lu="true" ecris="false" parle="false" matern="true"/>
+			</langues>
+		</ident>
+		<formations>
+			<formation>
+				<intitule>Fac de versailles</intitule>
+				<diplomes>
+					<diplome note="14" obtenu="true">
+						<intitule>DAEU</intitule>
+						<option>B</option>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<intitule>Ecole privé Evry</intitule>
+				<diplomes>
+					<diplome note="18.5" obtenu="true">
+						<intitule>BEP Informatique de gestion</intitule>
+						<option>dev</option>
+					</diplome>
+					<diplome note="18.5" obtenu="true">
+						<intitule>Licence Pro Assistant chef de projet</intitule>
+						<option>dev</option>
+					</diplome>
+					<diplome note="15.5" obtenu="false">
+						<intitule>Master chef de projet</intitule>
+						<option>dev</option>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+	</cv>
+	<cv id="C132">
+		<ident idciv="Mme">
+			<nom>DESORBAIX</nom>
+			<pnom>Alexandre</pnom>
+			<pnom>Dominique</pnom>
+			<pnom>Joël</pnom>
+			<mail>desorbaix@free.fr</mail>
+			<tel>06.64.27.63.60</tel>
+			<permis value="A"/>
+			<datenaiss>1985-01-25</datenaiss>
+			<age>40</age>
+			<langues>
+				<langue langName="fr" matern="true" lu="true" ecris="true" parle="true"/>
+				<langue langName="en" lu="true" ecris="true" parle="true" matern="true"/>
+				<langue langName="al" lu="true" ecris="false" parle="false" matern="true"/>
+			</langues>
+		</ident>
+		<formations>
+			<formation>
+				<intitule>Fac de versailles</intitule>
+				<diplomes>
+					<diplome note="14" obtenu="true">
+						<intitule>DAEU</intitule>
+						<option>B</option>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<intitule>Ecole privé Evry</intitule>
+				<diplomes>
+					<diplome note="18.5" obtenu="true">
+						<intitule>BEP Informatique de gestion</intitule>
+						<option>dev</option>
+					</diplome>
+					<diplome note="18.5" obtenu="true">
+						<intitule>Licence Pro Assistant chef de projet</intitule>
+						<option>dev</option>
+					</diplome>
+					<diplome note="15.5" obtenu="false">
+						<intitule>Master chef de projet</intitule>
+						<option>dev</option>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+	</cv>
+</cvs>

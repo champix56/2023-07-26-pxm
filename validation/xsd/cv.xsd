@@ -24,6 +24,7 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
+				<xs:element ref="cv" maxOccurs="unbounded"/>
 			</xs:sequence>
 			<!--<xs:attribute></xs:attribute>-->
 		</xs:complexType>

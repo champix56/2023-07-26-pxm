@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="ST_telNumber">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="0[1-7](((-\d{2}){4})|((\.\d{2}){4})|(( \d{2}){4}))"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:attribute name="langName" type="ST_langName"/>
 	<xs:simpleType name="ST_langName">
 		<xs:restriction base="xs:string">
@@ -33,18 +38,18 @@
 	<xs:element name="datenaiss" type="xs:date"/>
 	<xs:element name="age" type="xs:integer"/>
 	<xs:complexType name="CT_permis">
-		<xs:attribute name="value" ></xs:attribute>
+		<xs:attribute name="value"/>
 	</xs:complexType>
 	<xs:complexType name="CT_ident">
 		<xs:sequence>
 			<xs:element ref="nom"/>
 			<xs:element ref="pnom" maxOccurs="4"/>
-			<xs:element ref="mail" />
-			<xs:element ref="tel" />
-			<xs:element ref="permis" />
-			<xs:element ref="datenaiss" />
-			<xs:element ref="age" />
-			<xs:element ref="langues" />
+			<xs:element ref="mail"/>
+			<xs:element ref="tel"/>
+			<xs:element ref="permis"/>
+			<xs:element ref="datenaiss"/>
+			<xs:element ref="age"/>
+			<xs:element ref="langues"/>
 		</xs:sequence>
 		<xs:attribute ref="idciv"/>
 	</xs:complexType>

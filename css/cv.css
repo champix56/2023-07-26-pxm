@@ -1,0 +1,32 @@
+@media screen{
+civilites{display:none;}
+}
+mail,tel,adresse,formation,diplome{display:block;}
+formations{
+	display:block;
+	margin-top:6cm;
+}
+diplome, competence{
+	margin-left:1cm;
+}
+formation>intitule{
+	font-size:23pt;
+font-weight:900;
+}
+
+cv{
+	display:block;
+	border:1px solid black;
+	height: 287mm;
+	width:20cm;
+	padding: 2cm;
+}
+formation option:before{
+	content : 'Option :';
+}
+@media print{
+	civilites{
+		display:block !important;
+		page-break-after:always;
+	}
+}

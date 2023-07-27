@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE cvs [
+	<!ENTITY euro "&#8364;">
+]>
 <cvs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cv.xsd">
 	<civilites>
 		<civilite id="M">Monsieur</civilite>
@@ -10,7 +13,7 @@
 	</civilites>
 	<cv id="C123">
 		<ident idciv="M Dr">
-			<nom>DESORBAIX</nom>
+			<nom>D&euro;SORBAIX</nom>
 			<pnom>Alexandre</pnom>
 			<mail>desorbaix@free.fr</mail>
 			<tel>06.64.27.63.60</tel>
@@ -34,7 +37,7 @@
 				</diplomes>
 			</formation>
 			<formation>
-				<intitule>Ecole privÃ© Evry</intitule>
+				<intitule>Ecole privé Evry</intitule>
 				<diplomes>
 					<diplome note="18.5" obtenu="true">
 						<intitule>BEP Informatique de gestion</intitule>
@@ -57,7 +60,7 @@
 			<nom>DESORBAIX</nom>
 			<pnom>Alexandre</pnom>
 			<pnom>Dominique</pnom>
-			<pnom>JoÃ«l</pnom>
+			<pnom>Joël</pnom>
 			<adresse>10 kerdelam 56410 ERDEVER</adresse>
 			<permis value="A"/>
 			<datenaiss>1985-01-25</datenaiss>
@@ -76,7 +79,7 @@
 				</competences>
 			</formation>
 			<formation>
-				<intitule>Ecole privÃ© Evry</intitule>
+				<intitule>Ecole privé Evry</intitule>
 				<diplomes>
 					<diplome note="18.5">
 						<intitule>BEP Informatique de gestion</intitule>

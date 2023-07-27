@@ -6,7 +6,8 @@
 type;num;date;idclient;total</xsl:text>
 	<xsl:for-each select="/factures/facture">
 		<xsl:text>
-un facture</xsl:text>
+</xsl:text>
+		<xsl:value-of select="translate(@type,'DF','df')"/>;<xsl:value-of select="@numfacture"/>
 </xsl:for-each>
 	</xsl:template>
 </xsl:stylesheet>

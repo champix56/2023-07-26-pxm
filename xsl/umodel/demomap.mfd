@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="21">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties SelectedLanguage="xslt2"/>
+		<structure>
+			<children>
+				<component name="factureXPATHCSS" library="xml" uid="3" kind="14">
+					<properties/>
+					<view rbx="212" rby="433"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="factures" outkey="1" expanded="1">
+										<entry name="dateeditionXML" type="attribute" outkey="2"/>
+										<entry name="facture" outkey="3" expanded="1">
+											<entry name="numfacture" type="attribute" outkey="4"/>
+											<entry name="idclient" type="attribute" outkey="5"/>
+											<entry name="lignes" expanded="1">
+												<entry name="ligne" outkey="6" expanded="1">
+													<entry name="phtByUnit" outkey="7"/>
+													<entry name="stotligne" outkey="8"/>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="factureXPATHCSS.xsd" inputinstance="Facture3.xml" outputinstance="Facture3.xml" instanceroot="{}factures"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="count" library="core" uid="10" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="9"/>
+						<datapoint pos="1" key="10"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="11"/>
+					</targets>
+					<view ltx="362" lty="462" rbx="476" rby="518"/>
+				</component>
+				<component name="sum" library="core" uid="12" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="12"/>
+						<datapoint pos="1" key="13"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="14"/>
+					</targets>
+					<view ltx="362" lty="280" rbx="476" rby="336"/>
+				</component>
+				<component name="count" library="core" uid="14" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="15"/>
+						<datapoint pos="1" key="16"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="17"/>
+					</targets>
+					<view ltx="362" lty="363" rbx="476" rby="419"/>
+				</component>
+				<component name="divide" library="core" uid="16" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="18"/>
+						<datapoint pos="1" key="19"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="20"/>
+					</targets>
+					<view ltx="505" lty="319" rbx="580" rby="375"/>
+				</component>
+				<component name="avg" library="core" uid="18" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="21"/>
+						<datapoint pos="1" key="22"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="23"/>
+					</targets>
+					<view ltx="374" lty="194" rbx="488" rby="250"/>
+				</component>
+				<component name="facturationtransfert" library="xml" uid="6" kind="14">
+					<properties XSLTDefaultOutput="1"/>
+					<view ltx="734" lty="13" rbx="960" rby="374"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="facturation" inpkey="24" expanded="1">
+										<entry name="dateTransfert" type="attribute" inpkey="25"/>
+										<entry name="factures" expanded="1">
+											<entry name="facture" inpkey="26" expanded="1">
+												<entry name="idfacture" type="attribute" inpkey="27"/>
+												<entry name="nomClient" type="attribute" inpkey="28"/>
+												<entry name="prixAvgArticle" inpkey="29" expanded="1"/>
+												<entry name="ligneAvg" inpkey="30"/>
+												<entry name="nbLignes" inpkey="31"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="facturationtransfert.xsd" outputinstance="facturationtransfert.xml" instanceroot="{}facturation"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="24" edgekey="32"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="25" edgekey="33"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="3">
+						<edges>
+							<edge vertexkey="26" edgekey="34"/>
+							<edge vertexkey="9" edgekey="35"/>
+							<edge vertexkey="12" edgekey="36"/>
+							<edge vertexkey="15" edgekey="37"/>
+							<edge vertexkey="21" edgekey="38"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="4">
+						<edges>
+							<edge vertexkey="27" edgekey="39"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="5">
+						<edges>
+							<edge vertexkey="28" edgekey="40"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="6">
+						<edges>
+							<edge vertexkey="10" edgekey="41"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="7">
+						<edges>
+							<edge vertexkey="22" edgekey="42"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="8">
+						<edges>
+							<edge vertexkey="13" edgekey="43"/>
+							<edge vertexkey="16" edgekey="44"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="11">
+						<edges>
+							<edge vertexkey="31" edgekey="45"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="14">
+						<edges>
+							<edge vertexkey="18" edgekey="46"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="17">
+						<edges>
+							<edge vertexkey="19" edgekey="47"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="20">
+						<edges>
+							<edge vertexkey="30" edgekey="48"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="23">
+						<edges>
+							<edge vertexkey="29" edgekey="49"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

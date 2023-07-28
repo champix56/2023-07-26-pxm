@@ -6,12 +6,18 @@
 			<!--def. des formats de  papier-->
 			<fo:layout-master-set>
 				<fo:simple-page-master master-name="A4Portrait" page-height="297mm" page-width="21cm">
-					<fo:region-body/>
+					<fo:region-body background-image="{/photos/@theme}" margin-bottom="0.5cm"/>
+					<fo:region-after extent="0.5cm" background-color="#FEFEAB"/>
 				</fo:simple-page-master>
 			</fo:layout-master-set>
 			<!--fin de definition des formats-->
 			<!--sequences de chapitres-->
 			<fo:page-sequence master-reference="A4Portrait">
+				<fo:static-content flow-name="xsl-region-after">
+					<fo:block text-align="center">
+						<xsl:value-of select="/photos/signature"/> - <fo:page-number/>
+					</fo:block>
+				</fo:static-content>
 				<fo:flow flow-name="xsl-region-body">
 					<fo:block>
 						<xsl:for-each select="//page">
@@ -30,9 +36,11 @@
 		</fo:root>
 	</xsl:template>
 	<xsl:template match="page/image">
-		<fo:table-row>
+		<fo:table-row height="6cm">
 			<fo:table-cell>
-				<fo:block>image</fo:block>
+				<fo:block text-align="center">
+					<fo:external-graphic src="{@path}{@href}" scaling="uniform" content-height="6cm" content-width="12cm"/>
+				</fo:block>
 			</fo:table-cell>
 			<fo:table-cell>
 				<fo:block>

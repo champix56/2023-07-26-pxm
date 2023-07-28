@@ -45,6 +45,11 @@
 	</xsl:template>
 	<xsl:template match="facture">
 		<div class="facture" id="facture-{@numfacture}">
+		<div class="destinataire">
+			<xsl:variable name="idc" select="@idclient"/>
+			<xsl:variable name="unClient" select="document('clients.xml')//client[@id=$idc]"/>
+			<xsl:value-of select="$unClient/destinataire"/>
+		</div>
 			<div class="numfact">
 				<xsl:choose>
 					<xsl:when test="contains(@type,'evis')">Devis</xsl:when>

@@ -27,6 +27,11 @@
 				</style>
 			</head>
 			<body>
+				<table>
+					<xsl:call-template name="calcul-total">
+						<xsl:with-param name="soustotaux" select="//stotligne"/>
+					</xsl:call-template>
+				</table>
 				<xsl:apply-templates select="//facture"/>
 			</body>
 		</html>
@@ -43,31 +48,62 @@
 			<xsl:apply-templates select="lignes"/>
 		</div>
 	</xsl:template>
-	<xsl:template match="@refdevis"><br/>en ref. du devis N°<xsl:value-of select="."/></xsl:template>
+	<xsl:template match="@refdevis">
+		<br/>en ref. du devis N°<xsl:value-of select="."/>
+	</xsl:template>
 	<xsl:template match="lignes">
 		<table class="lignes" border="1">
-				<tr>
-					<th>ref</th><th>designation</th><th>€/unit</th><th>quant</th><th>S-Total</th>
-				</tr>
-				<xsl:apply-templates select="ligne"/>
-				<xsl:call-template name="calcul-total"/>
+			<tr>
+				<th>ref</th>
+				<th>designation</th>
+				<th>€/unit</th>
+				<th>quant</th>
+				<th>S-Total</th>
+			</tr>
+			<xsl:apply-templates select="ligne"/>
+			<xsl:call-template name="calcul-total"/>
 		</table>
 	</xsl:template>
+	<xsl:template name="somme-arrondis">
+		<xsl:param name="nodes"/>
+		<xsl:variable name="temporaryNodes">
+			<xsl:for-each select="$nodes">
+				<value>
+					<xsl:value-of select="format-number(.,'0.00')"/>
+				</value>
+			</xsl:for-each>
+		</xsl:variable>
+		<xsl:value-of select="sum($temporaryNodes/*)"/>
+	</xsl:template>
 	<xsl:template name="calcul-total">
+		<xsl:param name="soustotaux" select=".//stotligne"/>
+		<xsl:variable name="sumRounded">
+			<xsl:call-template name="somme-arrondis">
+				<xsl:with-param name="nodes" select="$soustotaux"/>
+			</xsl:call-template>
+		</xsl:variable>
+		<xsl:variable name="ht" select="format-number($sumRounded,'0.00')"/>
+		<xsl:variable name="tva" select="format-number($ht*0.2,'0.00')"/>
 		<tr>
 			<th colspan="2">&#160;</th>
 			<th colspan="2">Total HT</th>
-			<th>&#160;</th>
+			<th>
+				<xsl:value-of select="format-number($ht,'0,00€','eurosAndCents')"/>
+			</th>
 		</tr>
 		<tr>
 			<th colspan="2">&#160;</th>
 			<th colspan="2">TVA</th>
-			<th>&#160;</th>
+			<th>
+				<xsl:value-of select="format-number($tva,'0,00€','eurosAndCents')"/>
+			</th>
 		</tr>
 		<tr>
 			<th colspan="2">&#160;</th>
 			<th colspan="2">Total TTC</th>
-			<th>&#160;</th>
+			<th>
+				<xsl:value-of select="format-number($ht+$tva,'0,00€','eurosAndCents')"/>
+			</th>
 		</tr>
 	</xsl:template>
 	<xsl:template match="ligne">
@@ -77,10 +113,14 @@
 	</xsl:template>
 	<xsl:template match="ligne/*"/>
 	<xsl:template match="ligne/ref | ligne/designation | ligne/nbUnit">
-		<td><xsl:value-of select="."/></td>
+		<td>
+			<xsl:value-of select="."/>
+		</td>
 	</xsl:template>
 	<xsl:decimal-format name="eurosAndCents" decimal-separator="," grouping-separator=" "/>
 	<xsl:template match="ligne/stotligne|ligne/phtByUnit">
-		<td class="cell-number"><xsl:value-of select="format-number(.,'0,00€','eurosAndCents')"/></td>
+		<td class="cell-number">
+			<xsl:value-of select="format-number(.,'0,00€','eurosAndCents')"/>
+		</td>
 	</xsl:template>
 </xsl:stylesheet>

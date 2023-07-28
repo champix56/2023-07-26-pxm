@@ -19,6 +19,11 @@
 						margin-top:2cm;
 						border: 1px solid black;
 					}
+					.lignes{
+						width:90%;margin-left:5%;
+						margin-top:25mm;
+					}
+					.cell-number{text-align:center; font-weight:900;}
 				</style>
 			</head>
 			<body>
@@ -40,7 +45,7 @@
 	</xsl:template>
 	<xsl:template match="@refdevis"><br/>en ref. du devis N°<xsl:value-of select="."/></xsl:template>
 	<xsl:template match="lignes">
-		<table class="lignes">
+		<table class="lignes" border="1">
 				<tr>
 					<th>ref</th><th>designation</th><th>€/unit</th><th>quant</th><th>S-Total</th>
 				</tr>
@@ -56,7 +61,8 @@
 	<xsl:template match="ligne/ref | ligne/designation | ligne/nbUnit">
 		<td><xsl:value-of select="."/></td>
 	</xsl:template>
+	<xsl:decimal-format name="eurosAndCents" decimal-separator="," grouping-separator=" "/>
 	<xsl:template match="ligne/stotligne|ligne/phtByUnit">
-		<td class="cell-number"><xsl:value-of select="format-number(.,'0,00€')"/></td>
+		<td class="cell-number"><xsl:value-of select="format-number(.,'0,00€','eurosAndCents')"/></td>
 	</xsl:template>
 </xsl:stylesheet>

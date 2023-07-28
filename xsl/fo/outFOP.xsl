@@ -11,9 +11,15 @@
 			</fo:layout-master-set>
 			<!--fin de definition des formats-->
 			<!--sequences de chapitres-->
-			<fo:page-sequence master-reference="">
-				<fo:flow flow-name="">
-					<fo:block></fo:block>
+			<fo:page-sequence master-reference="A4Portrait">
+				<fo:flow flow-name="xsl-region-body">
+					<fo:block>
+					<xsl:for-each select="//page">
+						<fo:block break-after="page">
+								
+						</fo:block>
+					</xsl:for-each>
+					</fo:block>
 				</fo:flow>
 			</fo:page-sequence>
 			<!--fin d'un chapitre-->

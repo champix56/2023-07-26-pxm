@@ -50,7 +50,25 @@
 					<th>ref</th><th>designation</th><th>€/unit</th><th>quant</th><th>S-Total</th>
 				</tr>
 				<xsl:apply-templates select="ligne"/>
+				<xsl:call-template name="calcul-total"/>
 		</table>
+	</xsl:template>
+	<xsl:template name="calcul-total">
+		<tr>
+			<th colspan="2">&#160;</th>
+			<th colspan="2">Total HT</th>
+			<th>&#160;</th>
+		</tr>
+		<tr>
+			<th colspan="2">&#160;</th>
+			<th colspan="2">TVA</th>
+			<th>&#160;</th>
+		</tr>
+		<tr>
+			<th colspan="2">&#160;</th>
+			<th colspan="2">Total TTC</th>
+			<th>&#160;</th>
+		</tr>
 	</xsl:template>
 	<xsl:template match="ligne">
 		<tr class="ligne">

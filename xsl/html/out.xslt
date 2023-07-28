@@ -27,6 +27,10 @@
 				</style>
 			</head>
 			<body>
+				<h1>Liste des factures</h1>
+				<ul>
+					<xsl:apply-templates select="//facture" mode="sommaire"/>
+				</ul>
 				<table>
 					<xsl:call-template name="calcul-total">
 						<xsl:with-param name="soustotaux" select="//stotligne"/>
@@ -35,6 +39,9 @@
 				<xsl:apply-templates select="//facture"/>
 			</body>
 		</html>
+	</xsl:template>
+	<xsl:template match="facture" mode="sommaire">
+		<li><a href="#facture-{@numfacture}"><xsl:value-of select="@type"/> N° <xsl:value-of select="@numfacture"/></a></li>
 	</xsl:template>
 	<xsl:template match="facture">
 		<div class="facture" id="facture-{@numfacture}">

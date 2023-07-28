@@ -15,7 +15,11 @@
 			<fo:page-sequence master-reference="A4Portrait">
 				<fo:static-content flow-name="xsl-region-after">
 					<fo:block text-align="center">
-						<xsl:value-of select="/photos/signature"/> - <fo:page-number/>
+						<fo:inline text-decoration="underline" color="blue">
+							<fo:basic-link external-destination="mailto:{/photos/signature}">
+								<xsl:value-of select="/photos/signature"/>
+							</fo:basic-link>
+						</fo:inline> - <fo:page-number/>
 					</fo:block>
 				</fo:static-content>
 				<fo:flow flow-name="xsl-region-body">

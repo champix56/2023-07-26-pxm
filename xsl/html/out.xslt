@@ -24,6 +24,7 @@
 						margin-top:25mm;
 					}
 					.cell-number{text-align:center; font-weight:900;}
+					.destinataire{margin-top:3cm;border:1px solid black;margin-left:13cm;width:6cm;padding:3mm;}
 				</style>
 			</head>
 			<body>
@@ -48,7 +49,10 @@
 		<div class="destinataire">
 			<xsl:variable name="idc" select="@idclient"/>
 			<xsl:variable name="unClient" select="document('clients.xml')//client[@id=$idc]"/>
-			<xsl:value-of select="$unClient/destinataire"/>
+			<xsl:value-of select="$unClient/destinataire"/><br/>
+			<xsl:value-of select="$unClient/adr1"/><br/>
+			<xsl:value-of select="$unClient/adr2"/><br/>
+			<xsl:value-of select="$unClient/cp"/>&#160;<xsl:value-of select="$unClient/ville"/><br/>
 		</div>
 			<div class="numfact">
 				<xsl:choose>

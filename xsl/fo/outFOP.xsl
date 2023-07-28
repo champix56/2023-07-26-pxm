@@ -5,12 +5,12 @@
 		<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
 		<!--def. des formats de  papier-->
 			<fo:layout-master-set>
-				<fo:simple-page-master master-name="">
+				<fo:simple-page-master master-name="A4Portrait" page-height="297mm" page-width="21cm">
 					<fo:region-body></fo:region-body>
 				</fo:simple-page-master>
 			</fo:layout-master-set>
 			<!--fin de definition des formats-->
-			<!--sequenquences de chapitres-->
+			<!--sequences de chapitres-->
 			<fo:page-sequence master-reference="">
 				<fo:flow flow-name="">
 					<fo:block></fo:block>

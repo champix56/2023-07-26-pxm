@@ -33,8 +33,9 @@
 					<xsl:when test="contains(@type,'evis')">Devis</xsl:when>
 					<xsl:otherwise>Facture</xsl:otherwise>
 				</xsl:choose> N°<xsl:value-of select="@numfacture"/>
-				<xsl:if test="@refdevis"><br/>en ref. du devis N°<xsl:value-of select="@refdevis"/></xsl:if>
+				<xsl:apply-templates select="@refdevis"/>
 			</div>
 		</div>
 	</xsl:template>
+	<xsl:template match="@refdevis"><br/>en ref. du devis N°<xsl:value-of select="."/></xsl:template>
 </xsl:stylesheet>

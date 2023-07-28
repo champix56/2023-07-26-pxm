@@ -35,7 +35,28 @@
 				</xsl:choose> N°<xsl:value-of select="@numfacture"/>
 				<xsl:apply-templates select="@refdevis"/>
 			</div>
+			<xsl:apply-templates select="lignes"/>
 		</div>
 	</xsl:template>
 	<xsl:template match="@refdevis"><br/>en ref. du devis N°<xsl:value-of select="."/></xsl:template>
+	<xsl:template match="lignes">
+		<table class="lignes">
+				<tr>
+					<th>ref</th><th>designation</th><th>€/unit</th><th>quant</th><th>S-Total</th>
+				</tr>
+				<xsl:apply-templates select="ligne"/>
+		</table>
+	</xsl:template>
+	<xsl:template match="ligne">
+		<tr class="ligne">
+			<xsl:apply-templates select="*"/>
+		</tr>
+	</xsl:template>
+	<xsl:template match="ligne/*"/>
+	<xsl:template match="ligne/ref | ligne/designation | ligne/nbUnit">
+		<td><xsl:value-of select="."/></td>
+	</xsl:template>
+	<xsl:template match="ligne/stotligne|ligne/phtByUnit">
+		<td class="cell-number"><xsl:value-of select="format-number(.,'0,00€')"/></td>
+	</xsl:template>
 </xsl:stylesheet>
